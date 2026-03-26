@@ -4,24 +4,62 @@ import { ExternalLink, Github, Layers } from "lucide-react";
 
 const projects = [
   {
-    title: "ShopVerse — eCommerce Platform",
+    title: "Shop Store — eCommerce Platform",
     category: "Full-Stack",
-    problem: "Businesses need a reliable, scalable online store with secure payments and real-time inventory management.",
+    problem:
+      "A complete MERN stack eCommerce platform enabling businesses to sell online with secure payments, real-time inventory, and smooth shopping experience.",
     stack: ["React", "Node.js", "Express", "MongoDB", "Stripe", "JWT"],
     features: [
-      "User auth & role-based access",
+      "User authentication & role-based access",
       "Product catalog with search & filters",
       "Shopping cart & Stripe checkout",
-      "Admin dashboard with analytics",
+      "Responsive modern UI",
     ],
-    live: "#",
-    github: "#",
+    live: "https://ella-e-commerce-frontend.vercel.app",
+    github:
+      "https://github.com/Faisal-M-S-Abu-Zakari/Ella-E-commerce/tree/main/frontend",
     featured: true,
   },
   {
-    title: "Client Landing Page",
+    title: "Shop Store — Admin Dashboard",
+    category: "Full-Stack",
+    problem:
+      "Admin dashboard for the Shop Store eCommerce platform, providing analytics, inventory management, and user/order control in a secure Full-Stack environment.",
+    stack: ["React", "Node.js", "Express", "MongoDB", "Chart.js", "JWT"],
+    features: [
+      "Admin authentication & role-based access",
+      "View and manage orders, products, and users",
+      "Analytics dashboard with charts & reports",
+      "Secure access with JWT",
+      "Real-time inventory updates",
+    ],
+    live: "https://ella-e-commerce-admin.vercel.app/",
+    github:
+      "https://github.com/Faisal-M-S-Abu-Zakari/Ella-E-commerce/tree/main/admin",
+    featured: true,
+  },
+  {
+    title: "Phoenix — Movie Discovery Platform",
     category: "Frontend",
-    problem: "A local business needed a fast, responsive, SEO-optimized website to increase online presence.",
+    problem:
+      "A modern movie discovery platform using TMDB API, allowing users to explore trending movies & TV shows with detailed info and smooth UX. Frontend-focused project highlighting API integration and responsive design.",
+    stack: ["React", "Next.js", "TMDB API", "Tailwind CSS"],
+    features: [
+      "Browse trending movies and TV shows",
+      "Detailed movie pages (ratings, overview, release date)",
+      "Search functionality",
+      "Responsive modern UI",
+      "Fast loading with optimized API calls",
+    ],
+    live: "https://phoenix-app-ebon.vercel.app/",
+    github: "https://github.com/Faisal-M-S-Abu-Zakari/Phoenix-App",
+    featured: true,
+  },
+  {
+    title: "HRXEL Landing Page",
+    category: "Frontend",
+    problem:
+      "A Saudi consulting firm landing page focusing on human capital, governance, and supply chain excellence, built with modern UI practices.",
     stack: ["Next.js", "Tailwind CSS", "Framer Motion"],
     features: [
       "Pixel-perfect responsive design",
@@ -29,24 +67,9 @@ const projects = [
       "Contact form integration",
       "SEO optimized with meta tags",
     ],
-    live: "#",
-    github: "#",
+    live: "https://www.hrxel.com/",
+    github: "https://github.com/Faisal-M-S-Abu-Zakari/Hrxel",
     featured: true,
-  },
-  {
-    title: "TaskFlow — Project Manager",
-    category: "Full-Stack",
-    problem: "Teams needed a lightweight tool to manage tasks and collaborate without bloated software.",
-    stack: ["React", "Node.js", "MongoDB", "Socket.io"],
-    features: [
-      "Real-time task updates",
-      "Drag & drop kanban board",
-      "Team collaboration features",
-      "Notification system",
-    ],
-    live: "#",
-    github: "#",
-    featured: false,
   },
 ];
 
@@ -57,19 +80,24 @@ const ProjectsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const filtered = activeFilter === "All" ? projects : projects.filter((p) => p.category === activeFilter);
+  const filtered =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="projects" className="py-28 relative">
-      <div className="container px-4">
+    <section id="projects" className="relative py-28">
+      <div className="px-4 container">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-primary font-medium text-sm tracking-wider uppercase mb-3">Projects</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
+          <p className="mb-3 font-medium text-primary text-sm uppercase tracking-wider">
+            Projects
+          </p>
+          <h2 className="mb-4 font-display font-bold text-3xl md:text-4xl">
             Featured <span className="text-gradient">work</span>
           </h2>
 
@@ -89,40 +117,45 @@ const ProjectsSection = () => {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
             {filtered.map((project, i) => (
               <motion.div
                 key={project.title}
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="glass rounded-xl overflow-hidden group hover:glow-border transition-all duration-500"
+                className="group hover:glow-border rounded-xl overflow-hidden transition-all duration-500 glass"
               >
                 {/* Card header */}
                 <div className="p-6 pb-0">
                   <div className="flex items-center gap-2 mb-3">
                     <Layers size={16} className="text-primary" />
-                    <span className="text-xs text-primary font-medium uppercase tracking-wider">
+                    <span className="font-medium text-primary text-xs uppercase tracking-wider">
                       {project.category}
                     </span>
                     {project.featured && (
-                      <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                      <span className="bg-primary/10 ml-auto px-2 py-0.5 rounded-full text-[10px] text-primary">
                         Featured
                       </span>
                     )}
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-gradient transition-all">
+                  <h3 className="font-display font-semibold text-foreground group-hover:text-gradient text-lg transition-all">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{project.problem}</p>
+                  <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
+                    {project.problem}
+                  </p>
                 </div>
 
                 {/* Features */}
                 <div className="px-6 pt-4">
                   <ul className="space-y-1.5">
                     {project.features.map((f) => (
-                      <li key={f} className="text-xs text-muted-foreground flex items-start gap-2">
-                        <span className="w-1 h-1 rounded-full bg-primary mt-1.5 shrink-0" />
+                      <li
+                        key={f}
+                        className="flex items-start gap-2 text-muted-foreground text-xs"
+                      >
+                        <span className="bg-primary mt-1.5 rounded-full w-1 h-1 shrink-0" />
                         {f}
                       </li>
                     ))}
@@ -130,26 +163,29 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Stack */}
-                <div className="px-6 pt-4 flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 px-6 pt-4">
                   {project.stack.map((t) => (
-                    <span key={t} className="text-[11px] px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground">
+                    <span
+                      key={t}
+                      className="bg-secondary px-2.5 py-1 rounded-md text-[11px] text-secondary-foreground"
+                    >
                       {t}
                     </span>
                   ))}
                 </div>
 
                 {/* Links */}
-                <div className="p-6 flex gap-3 mt-2">
+                <div className="flex gap-3 mt-2 p-6">
                   <a
                     href={project.live}
-                    className="flex items-center gap-1.5 text-sm text-primary hover:underline"
+                    className="flex items-center gap-1.5 text-primary text-sm hover:underline"
                   >
                     <ExternalLink size={14} />
                     Live Demo
                   </a>
                   <a
                     href={project.github}
-                    className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground text-sm transition-colors"
                   >
                     <Github size={14} />
                     Source

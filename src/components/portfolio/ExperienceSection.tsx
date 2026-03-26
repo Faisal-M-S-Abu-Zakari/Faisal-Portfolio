@@ -16,7 +16,7 @@ const experiences = [
   {
     title: "Software Engineering Graduate",
     company: "University — SE & AI",
-    period: "2020 — 2024",
+    period: "2020 — 2025",
     points: [
       "Graduated with 88.01% GPA in Software Engineering and Artificial Intelligence",
       "Led team projects with focus on full-stack web development",
@@ -30,23 +30,25 @@ const ExperienceSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="experience" className="py-28 relative">
+    <section id="experience" className="relative py-28">
       <div className="absolute inset-0 dot-grid opacity-20" />
-      <div className="container px-4 relative z-10">
+      <div className="z-10 relative px-4 container">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-primary font-medium text-sm tracking-wider uppercase mb-3">Experience</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-12">
+          <p className="mb-3 font-medium text-primary text-sm uppercase tracking-wider">
+            Experience
+          </p>
+          <h2 className="mb-12 font-display font-bold text-3xl md:text-4xl">
             Where I've <span className="text-gradient">worked</span>
           </h2>
 
           <div className="relative max-w-2xl">
             {/* Timeline line */}
-            <div className="absolute left-[19px] top-2 bottom-2 w-px bg-border" />
+            <div className="top-2 bottom-2 left-[19px] absolute bg-border w-px" />
 
             <div className="space-y-10">
               {experiences.map((exp, i) => (
@@ -57,26 +59,31 @@ const ExperienceSection = () => {
                   transition={{ duration: 0.5, delay: i * 0.2 }}
                   className="relative pl-12"
                 >
-                  <div className="absolute left-2.5 top-1 w-4 h-4 rounded-full border-2 border-primary bg-background" />
+                  <div className="top-1 left-2.5 absolute bg-background border-2 border-primary rounded-full w-4 h-4" />
 
-                  <div className="glass rounded-xl p-6 hover:glow-border transition-all duration-300">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3">
+                  <div className="p-6 hover:glow-border rounded-xl transition-all duration-300 glass">
+                    <div className="flex sm:flex-row flex-col sm:justify-between sm:items-center gap-1 mb-3">
                       <div>
-                        <h3 className="font-display font-semibold text-foreground">{exp.title}</h3>
-                        <div className="flex items-center gap-1.5 text-sm text-primary">
+                        <h3 className="font-display font-semibold text-foreground">
+                          {exp.title}
+                        </h3>
+                        <div className="flex items-center gap-1.5 text-primary text-sm">
                           <Briefcase size={13} />
                           {exp.company}
                         </div>
                       </div>
-                      <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                      <div className="flex items-center gap-1.5 text-muted-foreground text-xs">
                         <Calendar size={12} />
                         {exp.period}
                       </div>
                     </div>
                     <ul className="space-y-2">
                       {exp.points.map((p) => (
-                        <li key={p} className="text-sm text-muted-foreground flex items-start gap-2">
-                          <span className="w-1 h-1 rounded-full bg-primary mt-2 shrink-0" />
+                        <li
+                          key={p}
+                          className="flex items-start gap-2 text-muted-foreground text-sm"
+                        >
+                          <span className="bg-primary mt-2 rounded-full w-1 h-1 shrink-0" />
                           {p}
                         </li>
                       ))}
