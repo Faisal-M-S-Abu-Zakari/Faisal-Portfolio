@@ -71,6 +71,22 @@ const projects = [
     github: "https://github.com/Faisal-M-S-Abu-Zakari/Hrxel",
     featured: true,
   },
+  {
+    title: "Displacement Camp Management System",
+    category: "Full-Stack (Graduation Project)",
+    problem:
+      "Engineered a comprehensive resource tracking and communication platform for displacement camps, ensuring data integrity and operational efficiency in resource-constrained environments.",
+    stack: ["Next.js", "MERN Stack", "Mantine UI", "Tailwind CSS"],
+    features: [
+      "Real-time Resource Tracking & Distribution Management",
+      "Secure Multi-role Authentication & Authorization System",
+      "Optimized Data Management for Low-Bandwidth Environments",
+      "Automated Reporting & Analytics Dashboard",
+    ],
+    live: "https://al-aqsa-camp.vercel.app/ ",
+    github: "https://github.com/Faisal-M-S-Abu-Zakari/graduation_project ",
+    featured: true,
+  },
 ];
 
 const filters = ["All", "Full-Stack", "Frontend"];
