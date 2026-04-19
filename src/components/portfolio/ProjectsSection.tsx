@@ -72,19 +72,25 @@ const projects = [
     featured: true,
   },
   {
-    title: "Displacement Camp Management System",
-    category: "Full-Stack (Graduation Project)",
+    title: "Luxury Gym Management System (Fit-Hub)",
+    category: "Full-Stack SaaS Application",
     problem:
-      "Engineered a comprehensive resource tracking and communication platform for displacement camps, ensuring data integrity and operational efficiency in resource-constrained environments.",
-    stack: ["Next.js", "MERN Stack", "Mantine UI", "Tailwind CSS"],
-    features: [
-      "Real-time Resource Tracking & Distribution Management",
-      "Secure Multi-role Authentication & Authorization System",
-      "Optimized Data Management for Low-Bandwidth Environments",
-      "Automated Reporting & Analytics Dashboard",
+      "Developed a premium, dark-themed gym management CRM and member portal to streamline subscription tracking, payments, and user authentication for modern fitness centers.",
+    stack: [
+      "React (Vite)",
+      "Supabase",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "React Query",
     ],
-    live: "https://al-aqsa-camp.vercel.app/ ",
-    github: "https://github.com/Faisal-M-S-Abu-Zakari/graduation_project ",
+    features: [
+      "Interactive Admin Dashboard for Comprehensive Member & Subscription Management",
+      "Secure Multi-role Authentication System (Admin vs. Gym Member)",
+      "Dynamic Member Portal featuring Virtual Membership Cards (QR-enabled)",
+      "Bilingual Landing Page (AR/EN) with Integrated Payment Guidelines",
+    ],
+    live: "https://fit-hub-global.vercel.app/",
+    github: "https://github.com/Faisal-M-S-Abu-Zakari/fit-hub-global",
     featured: true,
   },
 ];
