@@ -93,6 +93,34 @@ const projects = [
     github: "https://github.com/Faisal-M-S-Abu-Zakari/fit-hub-global",
     featured: true,
   },
+  {
+    title: "Faisal Academy — Online Learning Platform",
+    category: "Full-Stack",
+    problem:
+      "A comprehensive online learning platform enabling instructors to create and manage courses while students can browse, purchase, and review courses with a seamless learning experience.",
+    stack: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT",
+      "Tailwind CSS",
+    ],
+    features: [
+      "Multi-role authentication (Admin, Instructor, Student)",
+      "Course creation and management for instructors",
+      "Course browsing, filtering, and enrollment for students",
+      "Comment and review system for courses",
+      "Newsletter subscription system",
+      "File upload support for course materials",
+      "Responsive modern UI with Tailwind CSS",
+      "Secure JWT-based authentication",
+    ],
+    live: "https://faisal-academy.vercel.app/",
+    github: "https://github.com/Faisal-M-S-Abu-Zakari/FaisalAcademy",
+    featured: true,
+  },
 ];
 
 const filters = ["All", "Full-Stack", "Frontend"];
