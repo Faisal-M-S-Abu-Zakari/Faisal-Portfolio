@@ -33,7 +33,7 @@ const projects = [
       "Secure access with JWT",
       "Real-time inventory updates",
     ],
-    live: "ecommerce-app-7jqq.vercel.app",
+    live: "https://ecommerce-app-7jqq.vercel.app",
     github:
       "https://github.com/Faisal-M-S-Abu-Zakari/Ecommerce-App/tree/main/admin",
     featured: true,
