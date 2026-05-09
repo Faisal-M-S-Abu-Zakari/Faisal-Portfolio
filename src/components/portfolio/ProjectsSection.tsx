@@ -15,9 +15,9 @@ const projects = [
       "Shopping cart & Stripe checkout",
       "Responsive modern UI",
     ],
-    live: "https://ella-e-commerce-frontend.vercel.app",
+    live: "https://ecommerce-app-six-omega.vercel.app",
     github:
-      "https://github.com/Faisal-M-S-Abu-Zakari/Ella-E-commerce/tree/main/frontend",
+      "https://github.com/Faisal-M-S-Abu-Zakari/Ecommerce-App/tree/main/frontend",
     featured: true,
   },
   {
@@ -33,9 +33,9 @@ const projects = [
       "Secure access with JWT",
       "Real-time inventory updates",
     ],
-    live: "https://ella-e-commerce-admin.vercel.app/",
+    live: "ecommerce-app-7jqq.vercel.app",
     github:
-      "https://github.com/Faisal-M-S-Abu-Zakari/Ella-E-commerce/tree/main/admin",
+      "https://github.com/Faisal-M-S-Abu-Zakari/Ecommerce-App/tree/main/admin",
     featured: true,
   },
   {
